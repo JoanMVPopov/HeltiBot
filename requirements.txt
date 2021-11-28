@@ -20,7 +20,9 @@ protobuf==3.19.1
 regex==2021.11.10
 requests==2.26.0
 six==1.16.0
-https://download.pytorch.org/whl/cpu/torch-1.8.1%2Bcpu-cp37-cp37m-win_amd64.whl
+-f https://download.pytorch.org/whl/torch_stable.html
+torch==1.8.1+cpu 
+torchvision==0.9.1+cpu
 tqdm==4.62.3
 typing_extensions==4.0.0
 urllib3==1.26.7
