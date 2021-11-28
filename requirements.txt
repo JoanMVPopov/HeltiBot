@@ -20,7 +20,7 @@ protobuf==3.19.1
 regex==2021.11.10
 requests==2.26.0
 six==1.16.0
-torch==1.8.2+cpu -f https://download.pytorch.org/whl/lts/1.8/torch_lts.html
+torch==1.8.1+cpu -f https://download.pytorch.org/whl/lts/1.8/torch_lts.html
 tqdm==4.62.3
 typing_extensions==4.0.0
 urllib3==1.26.7
