@@ -21,7 +21,7 @@ regex==2021.11.10
 requests==2.26.0
 six==1.16.0
 -f https://download.pytorch.org/whl/torch_stable.html
-https://download.pytorch.org/whl/cpu/torch-1.10.0%2Bcpu-cp37-cp37m-win_amd64.whl 
+torch==1.10.0+cpu
 tqdm==4.62.3
 typing_extensions==4.0.0
 urllib3==1.26.7
