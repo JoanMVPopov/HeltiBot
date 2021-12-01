@@ -40,6 +40,7 @@ def StripOfChar(listOfLemmas):
 
 
 
+"""
 if __name__ == '__main__':
     # get arguments
     parser = argparse.ArgumentParser()
@@ -87,12 +88,12 @@ if __name__ == '__main__':
     print('')
     print('---')
 
-    """
+    '''
     -> sent in doc.sentences returns a 2d list
     -> word in sent.words returns keys from dictionary saved in the first list
     -> the next operation returns the value from the said key
     ---> in this case the k:v pair is 'lemma':'value'
-    """
+    '''
 
     lemmas = [f'{word.lemma}' for sent in doc.sentences for word in sent.words]
 
@@ -100,3 +101,4 @@ if __name__ == '__main__':
     print(cleanLemmas)
     print('')
     print('---')
+"""

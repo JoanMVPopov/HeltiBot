@@ -15,6 +15,8 @@ with open('intentsBG.json', 'r', encoding="utf8") as json_data:
 FILE = "dataBG.pth"
 data = torch.load(FILE)
 
+classla.download('bg')
+
 input_size = data["input_size"]
 hidden_size = data["hidden_size"]
 output_size = data["output_size"]

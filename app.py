@@ -5,7 +5,7 @@ import classla
 
 app = Flask(__name__)
 
-classla.download('bg')
+#classla.download('bg')
 
 @app.get("/")
 def index_get():
