@@ -8,6 +8,8 @@ from model import NeuralNet
 from nltk_utils import bagOfWords_BG
 from bot_utils import StripOfChar, classla
 
+CLASSLA_RESOURCES_DIR = os.getcwd()
+
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 with open('intentsBG.json', 'r', encoding="utf8") as json_data:
@@ -18,7 +20,7 @@ data = torch.load(FILE)
 
 print("\n\nCLASSLA DOWNLOAD CHAT.PY\n\n")
 print(os.getcwd())
-classla.download('bg')
+classla.download('bg', CLASSLA_RESOURCES_DIR)
 
 input_size = data["input_size"]
 hidden_size = data["hidden_size"]
@@ -38,7 +40,7 @@ model.eval()
 
 bot_name = "HeltiBot"
 
-pipeline = classla.Pipeline('bg', use_gpu=False)
+pipeline = classla.Pipeline('bg', dir=CLASSLA_RESOURCES_DIR, use_gpu=False)
 
 def get_response(msg):
     sentenceToLemmatize = pipeline(msg)
