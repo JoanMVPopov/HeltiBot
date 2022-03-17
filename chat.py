@@ -2,6 +2,7 @@ import random
 import json
 
 import torch
+import os
 
 from model import NeuralNet
 from nltk_utils import bagOfWords_BG
@@ -16,6 +17,7 @@ FILE = "dataBG.pth"
 data = torch.load(FILE)
 
 print("\n\nCLASSLA DOWNLOAD CHAT.PY\n\n")
+print(os.getcwd())
 classla.download('bg')
 
 input_size = data["input_size"]
