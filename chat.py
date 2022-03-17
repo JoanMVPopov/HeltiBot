@@ -15,6 +15,7 @@ with open('intentsBG.json', 'r', encoding="utf8") as json_data:
 FILE = "dataBG.pth"
 data = torch.load(FILE)
 
+print("\n\nCLASSLA DOWNLOAD CHAT.PY\n\n")
 classla.download('bg')
 
 input_size = data["input_size"]
@@ -44,6 +45,7 @@ def get_response(msg):
 
     StripOfChar(lemmatizedSentence)
 
+    print("\n\nGET_RESPONSE IN CHAT.PY\n\n")
     print(lemmatizedSentence)
 
     X = bagOfWords_BG(lemmatizedSentence, all_words)
