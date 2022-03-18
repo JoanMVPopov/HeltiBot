@@ -20,7 +20,7 @@ data = torch.load(FILE)
 
 print("\n\nCLASSLA DOWNLOAD CHAT.PY\n\n")
 print(os.getcwd())
-classla.download('bg', CLASSLA_RESOURCES_DIR)
+#classla.download('bg', CLASSLA_RESOURCES_DIR)
 
 input_size = data["input_size"]
 hidden_size = data["hidden_size"]
