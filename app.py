@@ -1,9 +1,18 @@
 from flask import Flask, render_template, request, jsonify
 from langdetect import detect, detect_langs
 from chat import get_response
+from scout_apm.flask import ScoutApm
 import classla
 
 app = Flask(__name__)
+
+ScoutApm(app)
+
+## ERROR AND APP MANAGEMENT -> USING SCOUT ADD-ON
+# Scout Settings
+app.config["SCOUT_NAME"] = "HeltiScout"
+# Utilize Error Monitoring:
+app.config["SCOUT_ERRORS_ENABLED"] = True
 
 #classla.download('bg')
 
