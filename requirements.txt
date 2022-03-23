@@ -2,7 +2,7 @@ asgiref==3.5.0
 certifi==2021.10.8
 cffi==1.15.0
 charset-normalizer==2.0.12
-classla==1.1.0
+classla==1.0.2
 click==8.0.4
 colorama==0.4.4
 cryptography==36.0.2
@@ -30,7 +30,6 @@ reldi-tokeniser==1.0.1
 requests==2.27.1
 scout-apm==2.24.2
 six==1.16.0
--f https://download.pytorch.org/whl/torch_stable.html
 torch==1.10.0+cpu
 tqdm==4.63.0
 typing_extensions==4.1.1
