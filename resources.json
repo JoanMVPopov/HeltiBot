@@ -268,8 +268,8 @@
     },
     "lemma": {
       "standard": {
-        "link": "11356/1412/sl_all_Sloleks_lemmatizer.pt",
-        "md5": "a054aebe899f1b702fb914e48017f293"
+        "link": "11356/1478/sl_all_Sloleks_lemmatizer.pt",
+        "md5": "e4212b834429c8718778508883258c49"
       },
       "nonstandard": {
         "link": "11356/1350/sl_all_Sloleks_lemmatizer.pt",
@@ -281,8 +281,8 @@
     },
     "pos": {
       "standard": {
-        "link": "11356/1391/ssj500k",
-        "md5": "e5f0b7f5735dedc57873c414ddd6da47",
+        "link": "11356/1476/ssj500k",
+        "md5": "4ef45da1a491448a21b4d7795a853379",
         "dependencies": [
           {
             "model": "pretrain",
@@ -319,7 +319,7 @@
     },
     "pretrain": {
       "standard": {
-        "link": "11356/1391/ssj500k.pretrain.pt",
+        "link": "11356/1476/ssj500k.pretrain.pt",
         "md5": "6911b40be0b26183eb2a55be851fd0fe"
       }
     },

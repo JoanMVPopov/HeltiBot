@@ -40,7 +40,7 @@ model.eval()
 
 bot_name = "HeltiBot"
 
-pipeline = classla.Pipeline('bg', dir=CLASSLA_RESOURCES_DIR, use_gpu=False, processors='tokenize, lemma')
+pipeline = classla.Pipeline('bg', dir=CLASSLA_RESOURCES_DIR, use_gpu=False, processors='tokenize, pos, lemma')
 
 def get_response(msg):
     sentenceToLemmatize = pipeline(msg)
