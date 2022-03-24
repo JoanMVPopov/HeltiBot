@@ -1,3 +1,6 @@
+from gevent import monkey
+monkey.patch_all()
+
 from flask import Flask, render_template, request, jsonify
 from langdetect import detect, detect_langs
 from chat import get_response
