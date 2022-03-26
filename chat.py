@@ -43,13 +43,14 @@ bot_name = "HeltiBot"
 pipeline = classla.Pipeline('bg', dir=CLASSLA_RESOURCES_DIR, use_gpu=False, processors='tokenize, lemma')
 
 def get_response(msg):
-    sentenceToLemmatize = pipeline(msg)
-    lemmatizedSentence = [f'{word.lemma}' for sent in sentenceToLemmatize.sentences for word in sent.words]
-    print(f"LEMMA 1 : {lemmatizedSentence}")
+    #sentenceToLemmatize = pipeline(msg)
+    #lemmatizedSentence = [f'{word.lemma}' for sent in sentenceToLemmatize.sentences for word in sent.words]
+    #print(f"LEMMA 1 : {lemmatizedSentence}")
 
-    StripOfChar(lemmatizedSentence)
+    #StripOfChar(lemmatizedSentence)
 
-    print("\n\nGET_RESPONSE IN CHAT.PY\n\n")
+    #print("\n\nGET_RESPONSE IN CHAT.PY\n\n")
+    lemmatizedSentence = ['къде', 'мога', 'да', 'умра']
     print(lemmatizedSentence)
 
     X = bagOfWords_BG(lemmatizedSentence, all_words)

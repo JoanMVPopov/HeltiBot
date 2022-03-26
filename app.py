@@ -39,6 +39,8 @@ def predict():
     print(len(text))
     print(detect(text))
     print(detect_langs(text))
+
+
     response = get_response(text)
     message = {"answer": response}
     return jsonify(message)
