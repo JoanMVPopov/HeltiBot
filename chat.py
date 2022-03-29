@@ -1,14 +1,17 @@
 import random
 import json
+import sys
+import requests
+import ast
 
 import torch
 import os
 
 from model import NeuralNet
 from nltk_utils import bagOfWords_BG
-from bot_utils import StripOfChar, classla
+from bot_utils import StripOfChar
 
-CLASSLA_RESOURCES_DIR = os.getcwd()
+#CLASSLA_RESOURCES_DIR = os.getcwd()
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -18,8 +21,8 @@ with open('intentsBG.json', 'r', encoding="utf8") as json_data:
 FILE = "dataBG.pth"
 data = torch.load(FILE)
 
-print("\n\nCLASSLA DOWNLOAD CHAT.PY\n\n")
-print(os.getcwd())
+#print("\n\nCLASSLA DOWNLOAD CHAT.PY\n\n")
+#print(os.getcwd())
 #classla.download('bg', CLASSLA_RESOURCES_DIR)
 
 input_size = data["input_size"]
@@ -40,17 +43,22 @@ model.eval()
 
 bot_name = "HeltiBot"
 
-pipeline = classla.Pipeline('bg', dir=CLASSLA_RESOURCES_DIR, use_gpu=False, processors='tokenize, lemma')
-
 def get_response(msg):
+    #print(msg)
+    #pipeline = classla.Pipeline('bg', dir=CLASSLA_RESOURCES_DIR, use_gpu=False, processors='tokenize, lemma')
     #sentenceToLemmatize = pipeline(msg)
+    #print(f"SENTE TO LEM: {sentenceToLemmatize}")
     #lemmatizedSentence = [f'{word.lemma}' for sent in sentenceToLemmatize.sentences for word in sent.words]
     #print(f"LEMMA 1 : {lemmatizedSentence}")
 
-    #StripOfChar(lemmatizedSentence)
+    URL = 'https://europe-west6-sharp-maxim-345614.cloudfunctions.net/lemmatizer'
+    r = requests.post(URL, json={'message': msg})
+    lemmatizedSentenceString = r.text
+    lemmatizedSentence = ast.literal_eval(lemmatizedSentenceString)
 
-    #print("\n\nGET_RESPONSE IN CHAT.PY\n\n")
-    lemmatizedSentence = ['къде', 'мога', 'да', 'умра']
+    StripOfChar(lemmatizedSentence)
+
+    print("\n\nGET_RESPONSE IN CHAT.PY\n\n")
     print(lemmatizedSentence)
 
     X = bagOfWords_BG(lemmatizedSentence, all_words)
