@@ -51,7 +51,7 @@ def get_response(msg):
     #lemmatizedSentence = [f'{word.lemma}' for sent in sentenceToLemmatize.sentences for word in sent.words]
     #print(f"LEMMA 1 : {lemmatizedSentence}")
 
-    URL = 'https://europe-west6-sharp-maxim-345614.cloudfunctions.net/lemmaZIP'
+    URL = 'https://europe-west6-sharp-maxim-345614.cloudfunctions.net/lemmatizer'
     r = requests.post(URL, json={'message': msg})
     lemmatizedSentenceString = r.text
     lemmatizedSentence = ast.literal_eval(lemmatizedSentenceString)
