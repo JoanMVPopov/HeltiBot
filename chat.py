@@ -15,10 +15,10 @@ from bot_utils import StripOfChar
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-with open('intentsBG.json', 'r', encoding="utf8") as json_data:
+with open('intentsBGv2.json', 'r', encoding="utf8") as json_data:
     intents = json.load(json_data)
 
-FILE = "dataBG.pth"
+FILE = "dataBGv6.pth"
 data = torch.load(FILE)
 
 #print("\n\nCLASSLA DOWNLOAD CHAT.PY\n\n")
@@ -58,7 +58,6 @@ def get_response(msg):
 
     StripOfChar(lemmatizedSentence)
 
-    print("\n\nGET_RESPONSE IN CHAT.PY\n\n")
     print(lemmatizedSentence)
 
     X = bagOfWords_BG(lemmatizedSentence, all_words)

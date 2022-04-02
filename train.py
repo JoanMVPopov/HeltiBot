@@ -14,13 +14,13 @@ from model import NeuralNet
 
 
 # OPEN .JSON INTENTS FILE
-with open('intentsBG.json', 'r', encoding="utf8") as f:
+with open('intentsBGv2.json', 'r', encoding="utf8") as f:
     intents = json.load(f)
 
 print(intents)
 
 # ESTABLISH PIPELINE AND RESOURCES LOCATION FOR APPROPRIATE LANGUAGE
-pipeline = classla.Pipeline(dir="C:/Users/Admin/classla_resources", lang="bg", use_gpu=False)
+pipeline = classla.Pipeline(dir="C:/Users/Admin/classla_resources", lang="bg", use_gpu=False, processors='tokenize, lemma')
 
 
 # ESTABLISH GENERAL-PURPOSE LISTS
@@ -40,7 +40,7 @@ for intent in intents['intents']:
         print(f"PATTERN {pattern}")
         patt = pipeline(pattern)
         lemmatizedWord = [f'{word.lemma}' for sent in patt.sentences for word in sent.words]
-        print(f"TOKENIZED: {lemmatizedWord}")
+        print(f"LEMMATIZED: {lemmatizedWord}")
         # add to our words list
         all_words.extend(lemmatizedWord)
         # add to xy pair
@@ -64,6 +64,7 @@ print(len(xy), "patterns", xy)
 print(len(tags), "tags:", tags)
 print(len(allWords), "unique stemmed words:", allWords)
 print("\n")
+
 
 
 # CREATE TRAINING DATA
@@ -94,8 +95,8 @@ print(y_train)
 
 # Hyper-parameters
 num_epochs = 1500
-batch_size = 8
-learning_rate = 0.001
+batch_size = 16
+learning_rate = 0.0002
 input_size = len(X_train[0])
 hidden_size = 8
 output_size = len(tags)
@@ -169,7 +170,7 @@ data = {
     "tags": tags
 }
 
-FILE = "dataBG.pth"
+FILE = "dataBGv6.pth"
 torch.save(data, FILE)
 
 print(f'training complete. file saved to {FILE}')
