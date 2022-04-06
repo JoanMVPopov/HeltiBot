@@ -45,6 +45,8 @@ class Chatbox {
 
         let msg1 = { name: "User", message: text1 }
         this.messages.push(msg1);
+        this.updateChatText(chatbox) // UPDATE CHATBOX WITH USER INPUT
+        textField.value = ''  // EMPTY USER INPUT FIELD
 
         // ADJUST SERVER SETTINGS BELOW
         fetch($SCRIPT_ROOT + '/predict', {

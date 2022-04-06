@@ -170,7 +170,7 @@ data = {
     "tags": tags
 }
 
-FILE = "dataBGv6.pth"
+FILE = "dataBGv8.pth"
 torch.save(data, FILE)
 
 print(f'training complete. file saved to {FILE}')
